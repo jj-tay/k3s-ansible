@@ -1,0 +1,8 @@
+---
+ansible_user: pi
+ansible_password: "{{ vault_ansible_password }}"
+k3s_version: v1.18.6+k3s1
+master_ip: "{{ hostvars[groups['master'][0]]['ansible_host'] | default(groups['master'][0])   }}"
+systemd_dir: /etc/systemd/system
+extra_server_args: ""
+extra_agent_args: ""
